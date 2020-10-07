@@ -21,6 +21,63 @@
           Infosys was established by seven engineers in Pune, Maharashtra, India with an initial capital of $250 in 1981.[10] It was registered as Infosys Consultants Private Limited on 2 July 1981.[11] In 1983, it relocated its office to Bangalore, Karnataka, India.
         </div>
          </ion-col>
+        
+<!--sample form start -->
+
+  <ion-col padding  size-xs="12" size-sm="12" size-md="12" size-lg="12" align-self-stretch>
+    <h3 class="page-title">Register</h3>
+    <ion-list lines="full" class="ion-no-margin">
+      <form [formGroup]="demoForm">
+      <ion-item>
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"></ion-input>
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+          <div *ngIf="f.firstName.errors.required" class="err-msg">First Name is required</div>
+      </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Last Name</ion-label>
+        <ion-input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"></ion-input>
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+          <div *ngIf="f.lastName.errors.required" class="err-msg">Last Name is required</div>
+      </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"></ion-input>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required" class="err-msg">Email Id is required</div>
+          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+      </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Phone No</ion-label>
+        <ion-input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"></ion-input>
+        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+          <div *ngIf="f.phone.errors.required" class="err-msg">Phone number is required</div>
+      </div>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Adderss</ion-label>
+        <ion-textarea formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }"></ion-textarea>
+        <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+          <div *ngIf="f.address.errors.required" class="err-msg">Address is required</div>
+      </div>
+      </ion-item>
+
+  
+      <ion-button color="primary" (click)="onSubmit()">Submit</ion-button>
+      <ion-button color="primary" type="reset" (click)="onReset()">Cancle</ion-button>
+      </form>
+    </ion-list>
+    </ion-col>
+  <!--sample form end-->
+
+
         <ion-col padding  size-xs="12" size-sm="12" size-md="6" size-lg="6" align-self-stretch>
           <h3>Details</h3>
           Infosys Limited, is an Indian multinational corporation that provides business consulting, information technology and outsourcing services. The company is headquartered in Bangalore, Karnataka, India.
